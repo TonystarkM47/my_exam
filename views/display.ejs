@@ -1,0 +1,25 @@
+<%= mydata.length %> Record Found
+<table border="1" align="center">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Details</th>
+        <th>Image</th>
+        <th>Action</th>
+    </tr>
+    <% for(var i=0; i<mydata.length; i++) { %>
+        <tr>
+            <td><%= i+1 %></td>
+            <td><%= mydata[i].product_name %></td>
+            <td><%= mydata[i].product_price %></td>
+            <td><%= mydata[i].product_deatails %></td>
+            <td>
+                <img src="/Upload/<%= mydata[i].product_image %>" width="100"/>
+            </td>
+            <td>
+                <a href="/delete/<%= mydata[i]._id %>">Delete</a>
+            </td>
+        </tr>
+        <% } %>
+</table>
